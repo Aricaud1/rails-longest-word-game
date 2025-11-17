@@ -1,0 +1,23 @@
+<div class="container text-center mt-4">
+
+  <h1 class="mb-4">Longest Word Game</h1>
+
+  <div class="letters d-flex justify-content-center mb-4">
+    <% @letters.each do |letter| %>
+      <div class="letter-box"><%= letter %></div>
+    <% end %>
+  </div>
+
+  <form action="/score" method="POST" data-turbo="false" class="mt-4">
+    <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+    <input type="hidden" name="letters" value="<%= @letters.join(" ") %>">
+
+    <div class="mb-3">
+      <input type="text" name="word" class="form-control"
+             placeholder="Tape un mot..." required>
+    </div>
+
+    <button class="btn btn-primary">Valider</button>
+  </form>
+
+</div>

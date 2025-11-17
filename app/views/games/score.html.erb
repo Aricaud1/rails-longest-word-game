@@ -1,0 +1,14 @@
+<div class="container text-center mt-4">
+
+  <h1>Résultat</h1>
+
+  <p><strong>Mot proposé :</strong> <%= @word %></p>
+  <p><strong>Message :</strong> <%= @message %></p>
+
+  <% if @score > 0 %>
+    <p><strong>Score :</strong> <%= @score %></p>
+  <% end %>
+
+  <%= link_to "Nouvelle partie", new_path, class: "btn btn-success mt-3" %>
+
+</div>
